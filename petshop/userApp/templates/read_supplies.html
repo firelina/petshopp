@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>All Supplies</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Supply Number</th>
+        <th>Created Date</th>
+        <th>Provider</th>
+        <th>Tovars</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for supply in supplies %}
+        <tr>
+          <td>{{ supply.supply_number }}</td>
+          <td>{{ supply.created_date }}</td>
+          <td>{{ supply.provider.title }}</td>
+          <td>
+            <ul>
+              {% for tovar in supply.tovars %}
+                <li>{{ tovar.tovar.title }} - {{ tovar.amount }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>
+            <a href="{{ url_for('edit_supply', id=supply.id) }}">Edit</a>
+            <a href="{{ url_for('delete_supply', id=supply.id) }}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <a href="{{ url_for('create_supply') }}">Create Supply</a>
+<br>
+  <a href="{{ url_for('supply') }}">Вернуться на главную страницу по поставкам</a>
+
+{% endblock %}

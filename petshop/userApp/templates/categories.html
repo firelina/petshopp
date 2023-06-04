@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row pb-3">
+    <div class="col-1 m-3">
+        <input type="button" value="Сохранить" id='categorySave'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Редактировать" id='categoryEdit'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Удалить" id='categoryDelete'/>
+    </div>
+</div>
+<div class="row mb-3">
+    <div><input id='categorySearch'/></div>
+</div>
+<div id="categoryDataTable">
+</div>
+<div id='categoryJqxWindow'>
+    <div>Header</div>
+    <div>
+        <div><input id='categoryInput'/></div>
+        <div id='categoryJqxlistbox'></div>
+        <input type="button" value="ОК" id='categoryOK'/>
+        <input type="button" value="Закрыть" id='categoryCancel'/>
+        </div>
+
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.4.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jqx-all.js') }}"></script>
+<script src="{{ url_for('static', filename='js/categories.js') }}"></script>
+{% endblock %}

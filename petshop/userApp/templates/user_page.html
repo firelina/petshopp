@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+<h1>Работник</h1>
+<ol>
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ res.id }}</h5>
+            <p class="card-text">{{ res.name }} Имя сотрудника </p>
+            <p class="card-text">{{ res.surname }} Фамилия сотрудника </p>
+              <p class="card-text">{{ res.lastname }} Отчество сотрудника </p>
+              <p class="card-text">{{ res.telethon }} Телефон </p>
+              <p class="card-text">{{ res.birthday }} День рождения сотрудника </p>
+              {% if res.user.role %}
+              <p class="card-text"> Администратор </p>
+              {% else %}
+            <p class="card-text"> Менеджер </p>
+            {% endif %}
+        </div>
+      </div>
+</ol>
+</div>
+    <a href="{{ url_for('start') }}">Главная страница</a>
+{% endblock %}

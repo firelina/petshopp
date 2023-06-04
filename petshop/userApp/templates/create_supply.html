@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ action }} supply</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.supply_number.label }} {{ form.supply_number(size=20) }}
+    </div>
+    <div>
+        {{ form.created_date.label }} {{ form.created_date(size=20) }}
+    </div>
+    <div>
+        {{ form.provider.label }} {{ form.provider }}
+    </div>
+    <div>
+        {{ form.manager.label }} {{ form.manager }}
+    </div>
+
+    <div>
+        <label>Товары:</label> <br>
+        {% for tov in form.tovars %}
+        {{tov.form.tovar}} {{tov.form.tovar.label}} {{ products[loop.index - 1][1] }} <br>
+        {{tov.form.amount.label}} {{tov.form.amount}} <br>
+        {{ tov.form.hidden_tag() }}
+        {% endfor %}
+    </div>
+    <div>
+        {{form.s}}
+    </div>
+</form>
+
+{% endblock %}

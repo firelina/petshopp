@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="title">
+        <h1>Приложение зоомагазин</h1>
+    </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('start') }}">Начать</a> <br>
+        {% else %}
+    <p>
+        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+        <a class="btn btn-success" href="/login">Войти</a>
+    </p>
+        {% endif %}
+
+
+<div align="center">
+
+
+</div>
+</div>
+{% endblock %}

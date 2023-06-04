@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Самый часто заказываемый товар</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Название товара</th>
+                <th>Количество заказов</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tovar in tovars %}
+            <tr>
+                <td>{{ tovar.title }}</td>
+                <td>{{ tovar.num_orders}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+<br>
+    <a href="{{ url_for('order') }}" class="btn btn-light">Вернуться к заказам</a>
+<br>
+    <a href="{{ url_for('excel_top_tovar') }}" class="btn btn-light">Выгрузить в excel</a>
+<br>
+    <a href="{{ url_for('start') }}" class="btn btn-warning">Главная страница</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ action }} Category</h1>
+  <form method="POST" >
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.title.label() }}
+      {{ form.title(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.animal.label() }}
+      {{ form.animal(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+{% endblock %}
+

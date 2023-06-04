@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ action }} Manager</h1>
+  <form method="POST" >
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.name.label() }}
+      {{ form.name(class="form-control") }}
+    </div>
+     <div class="form-group">
+      {{ form.surname.label() }}
+      {{ form.surname(class="form-control") }}
+    </div>
+      <div class="form-group">
+      {{ form.lastname.label() }}
+      {{ form.lastname(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.telethon.label() }}
+      {{ form.telethon(class="form-control") }}
+    </div>
+      <div class="form-group">
+      {{ form.birthday.label() }}
+      {{ form.birthday(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+{% endblock %}

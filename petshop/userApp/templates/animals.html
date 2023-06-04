@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row pb-3">
+    <div class="col-1 m-3">
+        <input type="button" value="Сохранить" id='animalSave'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Редактировать" id='animalEdit'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Удалить" id='animalDelete'/>
+    </div>
+
+</div>
+<div class="row mb-3">
+    <div><input id='search'/></div>
+</div>
+<div id="dataTable">
+</div>
+
+<div id='jqxWindow'>
+    <div>Header</div>
+    <div>
+        <div><input id='input'/></div>
+        <input type="button" value="ОК" id='OK'/>
+        <input type="button" value="Закрыть" id='Cancel'/>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/jquery-3.6.4.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jqx-all.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animals.js') }}"></script>
+{% endblock %}

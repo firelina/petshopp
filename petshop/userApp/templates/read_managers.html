@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Managers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Lastname</th>
+                <th>Telethon</th>
+                <th>Birthday</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for manager in managers %}
+            <tr>
+                <td>{{ manager.id }}</td>
+                <td>{{ manager.name }}</td>
+                <td>{{ manager.surname }}</td>
+                <td>{{ manager.lastname }}</td>
+                <td>{{ manager.telethon }}</td>
+                <td>{{ manager.birthday }}</td>
+                <td>
+                    <a href="{{ url_for('edit_manager', id=manager.id) }}">Edit</a>
+                    <a href="{{ url_for('delete_manager', id=manager.id) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('create_manager') }}">Create Manager</a>
+<br>
+    <a href="{{ url_for('manager') }}">Вернуться на главную страницу по работникам</a>
+{% endblock %}

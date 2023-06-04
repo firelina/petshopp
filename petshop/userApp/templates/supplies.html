@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row pb-3">
+    <div class="col-1 m-3">
+        <input type="button" value="Сохранить" id='supplySave'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Редактировать" id='supplyEdit'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Удалить" id='supplyDelete'/>
+    </div>
+</div>
+<div class="row mb-3">
+    <div><input id='supplySearch'/></div>
+</div>
+<div id="supplyDataTable">
+</div>
+<div id='supplyJqxWindow'>
+    <div>Header</div>
+    <div>
+        <div id='jqxMaskedInput'></div>
+        <div id='jqxDateTimeInput'></div>
+        <div id='supplyJqxlistbox'></div>
+
+        <div id="supplyAddTovarDataTable">
+        </div>
+        <div><input type="button" value="Добавить товар" id='supplyAddTovar'/>
+        <input type="button" value="Изменить товар" id='supplyEditTovar'/>
+        <input type="button" value="Удалить товар" id='supplyDeleteTovar'/></div>
+        <input type="button" value="ОК" id='supplyOK'/>
+        <input type="button" value="Закрыть" id='supplyCancel'/>
+    </div>
+</div>
+
+
+<div id='supplyAddTovarJqxWindow'>
+    <div>Header</div>
+    <div>
+        <div id='supplyAddTovarJqxlistbox'></div>
+        <div id="supplyAddTovarJqxFormattedInput"><input type="text"/></div>
+        <input type="button" value="ОК" id='supplyAddTovarOK'/>
+        <input type="button" value="Закрыть" id='supplyAddTovarCancel'/>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.4.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jqx-all.js') }}"></script>
+<script src="{{ url_for('static', filename='js/supplies.js') }}"></script>
+{% endblock %}

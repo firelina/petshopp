@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row pb-3">
+    <div class="col-1 m-3">
+        <input type="button" value="Сохранить" id='managerSave'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Редактировать" id='managerEdit'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Удалить" id='managerDelete'/>
+    </div>
+</div>
+<div class="row mb-3">
+    <div><input id='managerSearch'/></div>
+</div>
+<div id="managerDataTable">
+</div>
+<div id='managerJqxWindow'>
+    <div>Header</div>
+    <div>
+        <div><input id='managerNameInput'/></div>
+        <div><input id='managerSurNameInput'/></div>
+        <div><input id='managerLastNameInput'/></div>
+        <div id='jqxMaskedInput'></div>
+        <div id='jqxDateTimeInput'></div>
+        <input type="button" value="ОК" id='managerOK'/>
+        <input type="button" value="Закрыть" id='managerCancel'/>
+        </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.4.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jqx-all.js') }}"></script>
+<script src="{{ url_for('static', filename='js/managers.js') }}"></script>
+{% endblock %}

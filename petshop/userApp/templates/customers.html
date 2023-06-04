@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row pb-3">
+    <div class="col-1 m-3">
+        <input type="button" value="Сохранить" id='customerSave'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Редактировать" id='customerEdit'/>
+    </div>
+    <div class="col-1 m-3">
+        <input type="button" value="Удалить" id='customerDelete'/>
+    </div>
+</div>
+<div class="row mb-3">
+    <div><input id='customerSearch'/></div>
+</div>
+<div id="customerDataTable">
+</div>
+<div id='customerJqxWindow'>
+    <div>Header</div>
+    <div>
+        <div><input id='customerNameInput'/></div>
+        <div><input id='customerSurNameInput'/></div>
+        <div><input id='customerLastNameInput'/></div>
+        <div id='jqxDateTimeInput'></div>
+        <input type="button" value="ОК" id='customerOK'/>
+        <input type="button" value="Закрыть" id='customerCancel'/>
+        </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.4.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jqx-all.js') }}"></script>
+<script src="{{ url_for('static', filename='js/customers.js') }}"></script>
+{% endblock %}

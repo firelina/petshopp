@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Суммарные затраты покупателей на покупки в магазине</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Сумма потраченная в магазине</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.surname}}</td>
+                <td>{{ customer.Total_value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+<br>
+    <a href="{{ url_for('order') }}" class="btn btn-light">Вернуться к заказам</a>
+<br>
+    <a href="{{ url_for('excel_sum_customers') }}" class="btn btn-light">Выгрузить в excel</a>
+<br>
+    <a href="{{ url_for('start') }} " class="btn btn-warning">Главная страница</a>
+{% endblock %}

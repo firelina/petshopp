@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Customers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Lastname</th>
+                <th>Discount</th>
+                <th>Birthday</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.surname }}</td>
+                <td>{{ customer.lastname }}</td>
+                <td>{{ customer.discount }}</td>
+                <td>{{ customer.birthday }}</td>
+                <td>
+                    <a href="{{ url_for('edit_customer', id=customer.id) }}">Edit</a>
+                    <a href="{{ url_for('delete_customer', id=customer.id) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('create_customer') }}">Create Customer</a>
+<br>
+    <a href="{{ url_for('order') }}">Вернуться на главную страницу по заказам</a>
+{% endblock %}

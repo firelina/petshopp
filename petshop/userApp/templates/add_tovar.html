@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The form element</h1>
+
+<form action="/action_page.php">
+<table>
+    <tr>
+        <th>id</th><th>Товар</th><th>Выбрать</th><th>Количество</th>
+    </tr>
+    <tr>
+        <td><input type="number" value="1" id="fid" name="id" readonly>
+        <td><input type="text" value="Некий товар" id="ftovar" name="tovar" readonly></td>
+        <td><input type="checkbox" id="fcheck" name="checked"></td>
+        <td>  <input type="number" id="fcount" name="count"></td>
+    </tr>
+</table>
+<input type="submit" value="Submit">
+</form>
+
+<!--<p>Click the "Submit" button and the form-data will be sent to a page on the -->
+<!--server called "action_page.php".</p>-->
+
+</body>
+</html>
